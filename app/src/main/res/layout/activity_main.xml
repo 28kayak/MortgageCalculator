@@ -10,8 +10,102 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.kaya.mortgagecalculator.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="21dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="Amount Borrowed"/>
+         <EditText
+            android:text="Enter Amount"
+            android:id="@+id/borrowedAmoung"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interest Rate"
+            android:textSize="25dp"/>
+        <SeekBar
+            android:id="@+id/interestRate"
+            android:text="Rate"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="10"
+            android:max="20"
+            android:min="0"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loan Term in years"
+            android:textSize="25dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 years"
+                android:id="@+id/fifteen_y"
+                android:checked="false"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 years"
+                android:id="@+id/twenty_y"
+                android:checked="false"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 years"
+                android:id="@+id/thirty_y"
+                android:checked="false"/>
+        </RadioGroup>
+        <TextView
+            android:text="Taxes and Insurance"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/tax"
+            android:text="include taxes"
+            android:textSize="20dp"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/insurance"
+            android:text="include insurance"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Calcuate!"
+            android:textSize="20dp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Monthly Payment"
+            android:textSize="25dp"
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 </RelativeLayout>
