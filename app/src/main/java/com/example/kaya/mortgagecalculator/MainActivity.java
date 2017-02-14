@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                 }
         );//setOnSeekBarChangeListener()
 
-        //set radio group action listener
+
 
 
 
@@ -75,7 +75,13 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         //should be called when calculate button is clicked
         int selectedLotnTerm = loanTerm.getCheckedRadioButtonId();
         RadioButton selected = (RadioButton) findViewById(selectedLotnTerm);
-        payment.setText(selected.getText());
+        if(tax.isChecked())
+        {
+            payment.setText(tax.getText()+ " is selected");
+        }
+
+
+        //payment.setText(selected.getText());
 
        // payment.setText(Integer.valueOf(interestRate.getProgress()));
 
