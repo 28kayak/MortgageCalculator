@@ -83,8 +83,10 @@ public class MainActivity extends AppCompatActivity{
         {
             //payment.setText("Amount: " + borrowedAmount.getText())
             payment.setText("id: " + getLoanTerm(selected.getText()+ ""));
-            int N = getLoanTerm(selected.getText()+ "");
+            Double tempN = new Double( getLoanTerm(selected.getText()+ ""));
+            double N = getLoanTerm(selected.getText()+ "") * 1.00;
             double P = Double.parseDouble(borrowedAmount.getText()+"");
+            double T = P * 0.001;
 
             if(intRate == 0)
             {
@@ -96,13 +98,12 @@ public class MainActivity extends AppCompatActivity{
                     if(insurance.isChecked())
                     {
                         //insurance + tax = 2(P*0.001)
-                        monthlyPayment = monthlyPayment + 2*(P * 0.001);
+                        monthlyPayment = monthlyPayment + 2*T;
                     }
                     else
                     {
                         //only tax is checked
-                        monthlyPayment = monthlyPayment + (P * 0.001);
-
+                        monthlyPayment = monthlyPayment + T;
                     }
 
                 }//tax.isChecked()
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity{
                     if(insurance.isChecked())
                     {
                         //tax is not checked and insurance is checked
-                        monthlyPayment= monthlyPayment + (P * 0.001);
+                        monthlyPayment= monthlyPayment + T;
                     }
                     else
                     {
@@ -122,7 +123,46 @@ public class MainActivity extends AppCompatActivity{
                 String result = String.format("%1$.3f /m", monthlyPayment);
                 payment.setTextColor(Color.BLUE);
                 payment.setText("Payment: " + result);
-            }
+            }//if(intRate == 0)
+            else
+            {
+                //Double tempJ  = new Double(intRate);
+                double J = intRate/1200.00;
+
+                double denominator =1.00-Math.pow((1.00 + J), -N);
+                double numerator = J;
+                monthlyPayment = P * ( numerator / denominator );
+                if(tax.isChecked())
+                {
+                    if(insurance.isChecked())
+                    {
+                        //insurance + tax = 2(P*0.001)
+                        monthlyPayment = monthlyPayment + 2*T;
+                    }
+                    else
+                    {
+                        //only tax is checked
+                        monthlyPayment = monthlyPayment + T;
+                    }
+
+                }//tax.isChecked()
+                else
+                {
+                    if(insurance.isChecked())
+                    {
+                        //tax is not checked and insurance is checked
+                        monthlyPayment= monthlyPayment + T;
+                    }
+                    else
+                    {
+                        //both are not checked
+                        // no change on monthlyPayment
+                    }
+                }//if(tax.isChecked())
+                String result = String.format("%1$.3f /m", monthlyPayment);
+                payment.setTextColor(Color.BLUE);
+                payment.setText("Payment: " + result);
+            }//else of if(intRate == 0)
         }//if(Pattern.matches(decimalFormat, borrowedAmount.getText()))
         else
         {
