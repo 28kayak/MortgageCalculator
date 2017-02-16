@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity{
 
-    int intRate;
+    double intRate;
     double monthlyPayment = 0;
     int selectedLoanTerm;
     EditText borrowedAmount;
@@ -55,14 +55,15 @@ public class MainActivity extends AppCompatActivity{
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         if(fromUser)
                         {
-                            intRate = interestRate.getProgress();
+                            intRate = interestRate.getProgress()/ 10;
+                            //intRate = intRate / 10;
                             rateLabel.setText("Interest Rate "  +  intRate + " % ");
                         }
                     }
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
                         //called when touched of seekbar
-                        System.out.print("in OnStartTracking seek bar");
+                        //System.out.print("in OnStartTracking seek bar");
                     }
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
@@ -162,6 +163,7 @@ public class MainActivity extends AppCompatActivity{
                 String result = String.format("%1$.3f /m", monthlyPayment);
                 payment.setTextColor(Color.BLUE);
                 payment.setText("Payment: " + result);
+
             }//else of if(intRate == 0)
         }//if(Pattern.matches(decimalFormat, borrowedAmount.getText()))
         else
@@ -170,15 +172,6 @@ public class MainActivity extends AppCompatActivity{
             payment.setText("wrong input");
             payment.setTextColor(Color.RED);
         }
-
-
-
-        //payment.setText(selected.getText());
-
-       // payment.setText(Integer.valueOf(interestRate.getProgress()));
-
-
-
     }//calcualte
 
     //helper function to get int type loan term

@@ -1,4 +1,4 @@
-# CS166 Software Project 1
+# CS166 Software Project 1 
 # Description
 For this assignment, you will implement a single-activity Android application using a handful of basic controls. The goal of the assignment is to become familiar with the use of Android Studio, basic UI elements, and the Android documentation.
 # View Layout
@@ -27,38 +27,45 @@ M = (P/N) + T
 • The Java and Android SDK documentation is your friend. You will need it to determine how to:
 - Create a String with the desired formatting
 - Write a value to a label
-- Read a value from a EditText o Convert an String to a float
+- Read a value from a EditText o Convert an String to a float 
 - Read a value from a slider
 - Determine which radio of a radio group is selected
 - Determine if a CheckBox is checked
 • Speeding up the emulator
 -  You can use the VM you created with the android image during the lab.
 - Remember that you can just keep the emulator open in the background, instead of closing it and reopening it whenever you want to run your app.
+
 # Other Requirements
 • The app shouldn't crash on user input errors, such as if no values are specified and the user clicks the Calculate button.
+
 # Submission
 On Android Studio, close the project (File -> Close Project). Zip the project folder (in the workspace folder) and submit to Canvas.
 
 ### Used Tech
 
 * [Android Studio] - editor for android development
-* [java] - the programming language
+* [java] - the programming language 
 * [github repository] - git hub repo
 
-## Reference
+## Reference 
+* [tutorial point] -- for android
+* [Usage Seek Bar] -- how to use seek bar
+* [radiogroup] -- how to get value from radio group and button
 
 
-Written By Kaya Ota
-Computer Science Depertment
-San Jose State Univesity
-Spring 2017
+
+> Written By Kaya Ota 
+> Computer Science Depertment 
+> San Jose State Univesity 
+> Spring 2017
 
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax) 
    [Android Studio]: <https://developer.android.com/studio/index.html>
    [java]: <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
    [github repository]: <https://github.com/28kayak/MortgageCalculator>
-   [jQuery]: <http://jquery.com>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
+   [Usage Seek Bar]: <http://techbooster.jpn.org/andriod/ui/8329/>
+   [text view]: <https://akira-watson.com/android/textview.html>
+   [radiogroup]: <https://www.tutorialspoint.com/android/android_radiogroup_control.htm>
+   [tutorial point]: <https://www.tutorialspoint.com/android/index.htm>
    [Gulp]: <http://gulpjs.com>
